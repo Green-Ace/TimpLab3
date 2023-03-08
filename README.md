@@ -1,15 +1,27 @@
 Задание 1
+
 cd Green-Ace/workspace/TimpLab3
+
 git clone https://github.com/tp-labs/lab03.git
+
 cd lab03/formatter_lib
+
 cat >> CMakeLists.txt << EOF
+
 cmake_minimum_required(VERSION 3.10)
+
 project(formatter)
+
 set(CMAKE_CXX_STANDARD 20)
+
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 add_library(formatter STATIC \${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp)
+
 include_directories(\${CMAKE_CURRENT_SOURCE_DIR})
+
 EOF
+
 cmake -H. -B_build
 
 
@@ -28,15 +40,25 @@ cmake --build _build
 Задание 2
 
 cd Green-Ace/workspace/TimpLab3/lab03/formatter_ex_lib
+
 cat >> CMakeLists.txt << EOF
+
 cmake_minimum_required(VERSION 3.10)
+
 set(CMAKE_CXX_STANDARD 20)
+
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 add_library(formatter_ex STATIC /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_ex_lib/formatter_ex.cpp)
+
 include_directories(\${CMAKE_CURRENT_SOURCE_DIR})
+
 include_directories(\${CMAKE_CURRENT_SOURCE_DIR}/formatter_lib)
+
 target_link_libraries(formatter_ex formatter)
+
 EOF
+
 cmake -H. -B_build
 
 
@@ -54,12 +76,20 @@ cmake -H. -B_build
 1)
 
 cd Green-Ace/workspace/TimpLab3/lab03/hello_world_application
+
 cat >> CMakeLists.txt <<EOF
+
 heredoc> cmake_minimum_required(VERSION 3.10)
+
 project(hello_world)
+
 set(CMAKE_CXX_STANDARD 20)
+
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_library(hello STATIC /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_ex_lib/formatter_ex.cpp /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_lib/formatter.cpp)
+
+add_library(hello STATIC /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_ex_lib/formatter_ex.cpp /home/ace
+
+/Green-Ace/workspace/TimpLab3/lab03/formatter_lib/formatter.cpp)
 
 include_directories(/home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_ex_lib /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_lib)
 
@@ -70,6 +100,7 @@ target_link_libraries(Hello hello)
 EOF
 
 cmake -H. -B_build
+
 cmake --build _build
 
 
@@ -92,7 +123,9 @@ _build/Hello
 cd Green-Ace/workspace/TimpLab3/lab03/solver_application
 
 cmake_minimum_required(VERSION 3.10)
+
 project(solver)
+
 set(CMAKE_CXX_STANDARD 20)
 
 add_library(solver STATIC /home/ace/Green-Ace/workspace/TimpLab3/lab03/solver_lib/solver.cpp /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_ex_lib/formatter_ex.cpp /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_lib/formatter.cpp)
@@ -101,7 +134,9 @@ add_library(solver STATIC /home/ace/Green-Ace/workspace/TimpLab3/lab03/solver_li
 include_directories(/home/ace/Green-Ace/workspace/TimpLab3/lab03/solver_lib /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_ex_lib /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_lib)
 
 add_executable(Solver /home/ace/Green-Ace/workspace/TimpLab3/lab03/solver_application/equation.cpp)
+
 target_link_libraries(Solver solver)
+
 EOF
 
 cmake -H. -B_build
