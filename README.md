@@ -16,7 +16,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(formatter STATIC \${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp)
+add_library(formatter STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp ${CMAKE_CURRENT_SOURCE_DIR}/formatter.h)
 
 include_directories(\${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -51,7 +51,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(formatter_ex STATIC /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_ex_lib/formatter_ex.cpp)
+add_library(formatter_ex STATIC /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_ex_lib/formatter_ex.cpp /home/ace/Green-Ace/workspace/TimpLab3/lab03/formatter_ex_lib/formatter_ex.h)
 
 include_directories(\${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -68,6 +68,16 @@ cmake -H. -B_build
 
 
 ![изображение](https://user-images.githubusercontent.com/112771063/223811391-fdfbaf33-10d7-4a57-b021-2e12c24504ae.png)
+
+
+
+
+cmake --build _build
+
+
+
+
+![изображение](https://user-images.githubusercontent.com/112771063/224056157-8d1f08f3-48e5-4b3d-8829-f566a44ee20c.png)
 
 
 
@@ -152,12 +162,19 @@ cmake -H. -B_build
 cmake --build _build
 
 
-![изображение](https://user-images.githubusercontent.com/112771063/223843402-e381c597-c9dc-4e88-b9aa-be946efd9aca.png)
+![изображение](https://user-images.githubusercontent.com/112771063/224058086-89676f9e-efce-42f5-a7df-e84a4c7320e1.png)
+
 
 
 
 
 _build/Solver
 
+  
+  
+  
+ ![изображение](https://user-images.githubusercontent.com/112771063/224059389-2ce341f8-ded3-4bc1-a255-234f9b87c5b2.png)
+ 
+  
 
 
